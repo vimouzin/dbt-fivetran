@@ -9,10 +9,3 @@ jobs:
        command: dbt run -m fivetran_dbt_model # Enter the dbt command that should run in this step. This example will run all your models. For a list of available commands visit https://docs.getdbt.com/reference/model-selection-syntax/.
      - name: test models
        command: dbt test -m fivetran_dbt_model # This example will run all your tests.
-
- - name: nightly
-   schedule: 0 0 * * * # This example will run every day at midnight.
-   steps:
-     - name: run models
-       command: dbt run --models my_first_model my_second_model # This example will run two specific models.
-
